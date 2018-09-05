@@ -6,8 +6,6 @@ services:
     image: ${dockerId}/bulletin-board-db:v2
     build:
       context: ./bulletin-board-db
-    networks:
-      - bb-net
 
   bb-app:
     image: ${dockerId}/bulletin-board-app:v2
@@ -18,8 +16,4 @@ services:
     depends_on:
       - bb-db
     restart: on-failure
-    networks:
-      - bb-net
 
-networks:
-  bb-net:
